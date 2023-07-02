@@ -20,6 +20,4 @@ const generateDigitArray = function(number) {
   return numberArray;
 };
 
-generateDigitArray(1234567890);
-
 module.exports = generateDigitArray;
