@@ -5,18 +5,18 @@ const sumDigits = require('../sumDigits');
 
 describe('sumDigits', () => {
   it('should throw an error if passed no arguments', () => {
-    const expectedOutput = "sumDigits() requires 1 argument: the number whose digits will be summed";
+    const expectedOutput = "arg cannot be undefined! sumDigits requires 1 argument: the number whose digits are to be summed";
     assert.throws(() => sumDigits(), expectedOutput);
   });
 
   it('should throw an error if passed more than 1 argument', () => {
-    const expectedOutput = "sumDigits() requires 1 argument: the number whose digits will be summed";
+    const expectedOutput = "too many args! sumDigits requires 1 argument: the number whose digits are to be summed";
     assert.throws(() => sumDigits(1, 2), expectedOutput);
   });
 
   it('should throw an error if the argument is not a number', () => {
     const input = "string";
-    const expectedOutput = "sumDigits() requires 1 argument: the number whose digits will be summed";
+    const expectedOutput = "arg is NaN! sumDigits requires 1 argument: the number whose digits are to be summed";
     assert.throws(() => sumDigits(input), expectedOutput);
   });
 

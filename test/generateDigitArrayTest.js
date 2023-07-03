@@ -6,18 +6,18 @@ const assert = chai.assert;
 
 describe('check', () => {
   it('should throw an error if passed no arguments', () => {
-    const expectedOutput = "generateDigitArray() requires 1 argument: the number to be converted into an array";
+    const expectedOutput = "arg cannot be undefined! generateDigitArray() requires 1 argument: the number to be converted into an array";
     assert.throws(() => generateDigitArray(), expectedOutput);
   });
 
   it('should throw an error if passed more than 1 argument', () => {
-    const expectedOutput = "generateDigitArray() requires 1 argument: the number to be converted into an array";
+    const expectedOutput = "too many args! generateDigitArray() requires 1 argument: the number to be converted into an array";
     assert.throws(() => generateDigitArray(1, 2), expectedOutput);
   });
 
   it('should throw an error if the argument is not a number', () => {
     const input = "string";
-    const expectedOutput = "generateDigitArray() requires 1 argument: the number to be converted into an array";
+    const expectedOutput = "arg is NaN! generateDigitArray() requires 1 argument: the number to be converted into an array";
     assert.throws(() => generateDigitArray(input), expectedOutput);
   });
 

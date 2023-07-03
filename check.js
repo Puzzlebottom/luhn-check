@@ -8,22 +8,18 @@ const check = function(number) {
   const invalidArg = "arg is NaN! check() requires 1 argument: the number to be checked";
   const error = (message) => new Error(message);
 
-
   if (!number) throw error(noArg);
   if (arguments.length > 1) throw error(tooManyArgs);
   if (isNaN(number)) throw error(invalidArg);
-
-  let result = false;
 
   let digitArray = generateDigitArray(number);
   let checkNumber = digitArray.pop();
   let checkSum = 0;
 
-  for (let i = digitArray.length - 1; i >= 0; i -= 2) {
-    checkSum += sumDigits(digitArray[i] * 2);
+  for (let i = digitArray.length - 1; i >= 0; i -= 1) {
+    checkSum += (i % 2) ? sumDigits(digitArray[i] * 2) : digitArray[i];
   }
-  // console.log("check number = " + checkNumber);
-  // console.log("checksum = " + checkSum);
+
   return checkNumber === 10 - (checkSum % 10);
 };
 

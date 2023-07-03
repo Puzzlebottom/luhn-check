@@ -31,11 +31,15 @@ describe('check', () => {
     assert.equal(check(input), expectedOutput);
   });
 
-  // it('should return false if the input is invalid', () => {
-  //   const input = 10002;
-  //   const expectedOutput = false;
-  //   assert.equal(check(input), expectedOutput);
-  // });
+  it('should return false if the input is invalid', () => {
+    const input = 12;
+    const expectedOutput = false;
+    assert.equal(check(input), expectedOutput);
+  });
 
-  it('should return true if the input is valid');
+  it('should return true if the input is valid', () => {
+    const input = 79927398713;
+    const expectedOutput = true;
+    assert.equal(check(input), expectedOutput);
+  });
 });
